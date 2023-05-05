@@ -1,0 +1,65 @@
+<!-- admin_login.html -->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Admin Login</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<style>
+body {
+	background-image:
+		url('https://repository-images.githubusercontent.com/356916985/cebcbf05-cf6a-4e55-9f28-a08d3c061919');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.container{
+
+	position: relative;
+	top:140px;
+}
+button{
+	text-align:center;
+}
+.card{
+	
+	background-color: rgba(255,255,255,0.8);
+}
+</style>
+</head>
+<body>
+
+	<div class="container mt-5">
+		<div class="row justify-content-center">
+			<div class="col-md-6">
+				<div class="card">
+					<div class="card-header">
+						<h3 class="card-title">Admin Login</h3>
+					</div>
+					<div class="card-body">
+						<form method="post" action="/admin/login" th:object="${a}">
+							<div class="form-group">
+								<label for="username">Username:</label> <input type="text"
+									id="username" name="name" class="form-control"
+									th:field="*{name}" required>
+							</div>
+							<div class="form-group">
+								<label for="password">Password:</label> <input type="password"
+									id="password" name="password" class="form-control"
+									th:field="*{password}" required>
+							</div>
+							<button type="submit" class="btn btn-primary btn-block">Login</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Add Student</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<style>
+.card {
+	
+	padding :10px 20px 10px 20px;
+	
+	}
+	label{
+		color: white;
+	}
+	.id{
+		text-align:center;
+	}
+	button:hover{
+		color: orange;
+	}
+	
+</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-6">
+
+				<div class="card bg-warning ">
+					<div class="card-header">
+						<h1>Add Student</h1>
+					</div>
+					<div class="card-body bg-dark">
+						<a href="javascript:history.back()" class="btn btn-primary">Back</a>
+						<form class="form" th:action="@{/student/saveform}"
+							th:object="${student}" method="post">
+
+							<div class="form-group">
+								<label for="rollNumber">Roll Number:</label> <input
+									class="form-control" type="number" id="rollNumber"
+									th:field="*{rollNumber}" />
+							</div>
+							<div class="form-group">
+								<label for="name">Name:</label> <input class="form-control"
+									type="text" id="name" th:field="*{name}" />
+							</div>
+							<div class="form-group">
+								<label for="email">Email:</label> <input class="form-control"
+									type="email" id="email" th:field="*{email}" />
+							</div>
+							<div class="form-group">
+								<label for="branch">Branch:</label> <input class="form-control"
+									type="text" id="branch" th:field="*{branch}" />
+							</div>
+							<div class="form-group">
+								<label for="phoneNumber">Phone Number:</label> <input
+									class="form-control" type="text" id="phoneNumber"
+									th:field="*{phoneNumber}" />
+							</div>
+							<div class="form-group">
+								<label for="address">Address:</label> <input
+									class="form-control" type="text" id="address"
+									th:field="*{address}" />
+							</div>
+							
+							<div class="form-group id" >
+								<button class="btn btn-success btn-bordered" type="submit">Add
+									Student</button>
+							</div>
+							
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
